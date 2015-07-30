@@ -370,7 +370,7 @@ class Collection(object):
         # TODO: this looks a little too naive...
         return dict((k, v) for k, v in iteritems(doc) if not k.startswith("$"))
 
-    def find(self, spec = None, fields = None, filter = None, sort = None, timeout = True, limit = 0, snapshot = False, as_class = None, skip = 0, slave_okay=False, no_cursor_timeout=False):
+    def find(self, spec = None, fields = None, filter = None, sort = None, timeout = True, limit = 0, snapshot = False, as_class = None, skip = 0, slave_okay=False, no_cursor_timeout=False, **kwargs):
         if filter is not None:
             print_deprecation_warning('filter', 'spec')
             if spec is None:
